@@ -310,11 +310,11 @@ impl<H: Hasher> From<Node<H>> for Vec<u8> {
             } => {
                 let mut bytes = vec![];
                 match (&left, &right) {
-                    // if the left child is default value then push 2
+                    // if the right child is default value then push 2
                     (_, NodeHash::Default(_)) => {
                         bytes.push(2);
                     }
-                    // if the right child is default value then push 3
+                    // if the left child is default value then push 3
                     (NodeHash::Default(_), _) => {
                         bytes.push(3);
                     }
